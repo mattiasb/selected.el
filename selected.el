@@ -4,7 +4,7 @@
 ;; MIT License
 
 ;; Author: Erik Sjöstrand
-;; URL: http://github.com/Kungsgeten/selected.el
+;; URL: https://github.com/Kungsgeten/selected.el
 ;; Version: 1.02
 ;; Keywords: convenience
 ;; Package-Requires: ()
