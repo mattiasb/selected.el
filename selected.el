@@ -30,6 +30,13 @@
 ;; want selected-minor-mode in all buffers.
 
 ;;; Code:
+
+(defgroup selected nil
+  "Keymap for when the region is active."
+  :prefix "selected-"
+  :group 'convenience
+  :link '(url-link "https://github.com/Kungsgeten/selected.el"))
+
 (defcustom selected-ignore-modes
   nil
   "List of major modes for which selected will not be turned on."
@@ -37,13 +44,15 @@
   :group 'selected)
 
 (defvar selected-keymap (make-sparse-keymap)
-  "Keymap for `selected-minor-mode'.  Add keys here that should be active when region is active.")
+  "Keymap for `selected-minor-mode'.
+Add keys here that should be active when region is active.")
 
 (defvar selected-minor-mode-override nil
   "Put keys in `selected-keymap' into `minor-mode-overriding-map-alist'?")
 
 (define-minor-mode selected-region-active-mode
-  "Meant to activate when region becomes active.  Not intended for the user.  Use `selected-minor-mode'."
+  "Meant to activate when region becomes active.
+Not intended for the user.  Use `selected-minor-mode'."
   :keymap selected-keymap
   (if selected-region-active-mode
       (let* ((major-selected-map
